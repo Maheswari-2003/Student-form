@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: calc(100% - 2rem);
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .centered-buttons {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .centered-buttons input[type="submit"],
+        .centered-buttons input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 1rem;
+            border-radius: 5px;
+        }
+
+        .centered-buttons input[type="submit"]:hover,
+        .centered-buttons input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>National Engineering College</h1>
+    </div>
+    <div class="container">
+        <h2>Student Admission Form</h2>
+        <form name="registrationForm"  method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" name="mobile" id="mobile" pattern="[0-9]{10}" required>
+                <small>Enter a 10-digit mobile number.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <small>Enter a valid email address (e.g., example@email.com).</small>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male" required>Male
+                <input type="radio" name="gender" value="Female" required>Female
+                <input type="radio" name="gender" value="Other" required>Other
+            </div>
+            <div class="form-group">
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" name="fatherName" id="fatherName" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" name="course" id="course" required>
+            </div>
+            <div class="form-group">
+                <label for="percentage12th">Percentage 12th:</label>
+                <input type="number" name="percentage12th" id="percentage12th" required>
+            </div>
+        
+                <!-- form fields -->
+                <div class="centered-buttons">
+                    <input type="submit" value="Submit">
+                    <input type="button" value="Show Users">
+                </div>
+            </form>
+            
+        </form>
+    </div>
+    
